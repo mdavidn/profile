@@ -1,0 +1,7 @@
+# Personal ~/.screenrc
+# Matthew Nelson <mnelson@vitalvector.com>
+
+autodetach on
+startup_message off
+vbell off
+defscrollback 10000

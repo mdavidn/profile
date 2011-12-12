@@ -1,0 +1,18 @@
+#!/bin/sh
+# Personal ~/.shrc
+# Prompt and options specific to sh.
+# Matthew Nelson <mnelson@vitalvector.com>
+
+# All sh shells invoke this directly via ENV variable set in ~/.profile.
+# Alias settings are not inherited and must be repeated.
+
+# Prompt
+PS1="$USER@\h:\w\$ "
+
+# History options
+HISTSIZE=1000
+
+# Evaluate aliases, useful for machine-specific commands
+if [ -f $HOME/.aliases ]; then
+  . $HOME/.aliases
+fi

@@ -1,0 +1,19 @@
+#!/bin/sh
+# Personal ~/.aliases
+# Command aliases for sh and bash.
+# Matthew Nelson <mnelson@vitalvector.com>
+
+# The promise vs the reality of socialism
+if which less >/dev/null 2>&1; then
+  alias more=less
+fi
+
+# I'm in the habit of typing "vim"
+if (which vi && ! which vim) >/dev/null 2>&1; then
+  alias vim=vi
+fi
+
+# Evaluate local aliases, useful for machine-specific commands
+if [ -f $HOME/.local_aliases ]; then
+  . $HOME/.local_aliases
+fi
