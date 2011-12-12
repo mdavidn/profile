@@ -1,0 +1,5 @@
+[user]
+	name = Matthew Nelson
+	email = matthew.nelson@digisynd.com
+[branch]
+	autosetuprebase = always
