@@ -42,7 +42,7 @@ set list listchars=tab:>\ ,trail:~,nbsp:%,extends:>,precedes:<
 set nowrap sidescroll=8
 
 " Display options
-set ruler showmode showcmd number showmatch wildmenu
+set ruler showmode showcmd number showmatch wildmenu cursorline
 set title titlestring=%F
 set background=light
 
