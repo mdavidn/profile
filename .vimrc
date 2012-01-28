@@ -2,25 +2,27 @@
 " Matthew Nelson <mnelson@vitalvector.com>
 
 " Looking forward
-set nocompatible backspace=2 encoding=utf-8
+set nocompatible backspace=indent,eol,start encoding=utf-8
 
 " Tabbing
-set smarttab shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+set expandtab shiftwidth=2 tabstop=2 softtabstop=2 autoindent
 
-filetype plugin indent on
+if has("autocmd")
 
-" Custom filetype settings
-autocmd FileType php,mako,perl setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType java setlocal noexpandtab shiftwidth=4, tabstop=4, softtabstop=4
+  filetype plugin indent on
 
-" Custom filetype detection
-autocmd BufNewFile,BufRead *.inc setfiletype php
-autocmd BufNewFile,BufRead *.mako setfiletype mako
+  " Custom filetype settings
+  autocmd FileType java,gitconfig setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
+
+  " Custom filetype detection
+  autocmd BufNewFile,BufRead *.inc setfiletype php
+  autocmd BufNewFile,BufRead *.mako setfiletype mako
+
+endif
 
 " Syntax highlighting
-if has("syntax")
+if has("syntax") && (&t_Co > 2 || has("gui_running"))
   syntax on
-  " autocmd BufEnter * syntax sync fromstart
 endif
 
 " Spell checking
@@ -46,7 +48,7 @@ set ruler showmode showcmd number showmatch wildmenu cursorline
 set title titlestring=%F
 set background=light
 
-" Incremental search
+" Search
 set incsearch hlsearch ignorecase smartcase
 
 " Disable bell
@@ -57,3 +59,27 @@ set nojoinspaces
 
 " Eliminate fsync pauses during regular editing
 set swapsync=
+
+" Transparency
+if has("transparency")
+  set transparency=10
+endif
+
+if has("gui_running")
+
+  " Disable menus and toolbars
+  set guioptions=aceg
+
+  " Desert color scheme
+  colorscheme solarized
+
+  " Change font
+  set guifont=DejaVu\ Sans\ Mono\ 10,Menlo\ Regular:h12
+
+endif
+
+" CommandT
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> :CommandT<CR>
+endif
