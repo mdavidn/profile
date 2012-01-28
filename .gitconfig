@@ -3,3 +3,7 @@
 	email = matthew.nelson@digisynd.com
 [branch]
 	autosetuprebase = always
+[core]
+	excludesfile = ~/.gitignore_global
+[color]
+	ui = true
