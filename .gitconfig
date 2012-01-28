@@ -9,3 +9,16 @@
 	ui = true
 [merge]
 	tool = vimdiff
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	b = branch
+	di = diff
+	dc = diff --cached
+	amend = commit --amend
+	aa = add --all
+	ff = merge --ff-only
+	pullff = pull --ff-only
+	fa = fetch --all
+	pom = push origin master
