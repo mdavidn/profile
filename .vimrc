@@ -48,6 +48,9 @@ set ruler showmode showcmd number showmatch wildmenu cursorline
 set title titlestring=%F
 set background=light
 
+" Windows
+set winwidth=79 winheight=5 winminheight=5 winheight=999
+
 " Search
 set incsearch hlsearch ignorecase smartcase
 
