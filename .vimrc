@@ -30,6 +30,8 @@ if has("spell")
   set spell
 endif
 
+let mapleader=","
+
 " Disable HTML rendering (bold, underline, etc)
 let html_no_rendering=1
 
@@ -46,10 +48,11 @@ set nowrap sidescroll=8
 " Display options
 set ruler showmode showcmd number showmatch wildmenu cursorline
 set title titlestring=%F
-set background=light
+set background=dark
 
 " Windows
-set winwidth=79 winheight=5 winminheight=5 winheight=999
+" set winwidth=79 winheight=5 winminheight=5 winheight=999
+set winwidth=79
 
 " Search
 set incsearch hlsearch ignorecase smartcase
@@ -82,7 +85,17 @@ if has("gui_running")
 endif
 
 " CommandT
-if has("gui_macvim")
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gt :CommandTFlush<cr>\|:CommandT app/templates<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
+map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+if has("gui_macvim") && has("gui_running")
   macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandT<CR>
+  map <D-t> :CommandTFlush<cr>\|:CommandT<cr>
 endif
