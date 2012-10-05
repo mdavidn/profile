@@ -17,6 +17,8 @@ adjustments = {
         '2F1b7cg5Ty6JmB8n': 12,
         'VjyRvw22NMkCKklu': 10,
         'L7DSfQrZMLcJUrdi': 12,
+        'PMOTa9G5WWGfIJD6': 12,
+        'uqUeuvTShkggbtwy': 12,
     }
 
 sha = hashlib.sha512()
