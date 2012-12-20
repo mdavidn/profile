@@ -19,6 +19,9 @@ if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
+# Fix delete on the Mac
+bind '"\e[3~": delete-char'
+
 # Disable auto-logout
 # All workstations have locking screens
 unset TMOUT

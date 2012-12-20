@@ -25,11 +25,6 @@ if has("syntax") && (&t_Co > 2 || has("gui_running"))
   syntax on
 endif
 
-" Spell checking
-if has("spell")
-  set spell
-endif
-
 let mapleader=","
 
 " Disable HTML rendering (bold, underline, etc)
@@ -48,7 +43,7 @@ set nowrap sidescroll=8
 " Display options
 set ruler showmode showcmd number showmatch wildmenu cursorline
 set title titlestring=%F
-set background=dark
+set background=light
 
 " Windows
 " set winwidth=79 winheight=5 winminheight=5 winheight=999
@@ -76,26 +71,13 @@ if has("gui_running")
   " Disable menus and toolbars
   set guioptions=aceg
 
-  " Desert color scheme
-  colorscheme solarized
-
   " Change font
   set guifont=DejaVu\ Sans\ Mono\ 10,Menlo\ Regular:h12
 
 endif
 
-" CommandT
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandT app/templates<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
-map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-if has("gui_macvim") && has("gui_running")
-  macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandTFlush<cr>\|:CommandT<cr>
-endif
+" Ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Shortcuts
+map <leader>t :w\|:!rspec --color %<cr>

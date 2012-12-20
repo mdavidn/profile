@@ -5,11 +5,13 @@
 
 # Homebrew
 if [ -d /usr/local/bin ]; then PATH=/usr/local/bin:$PATH; fi
+if [ -d /usr/local/share/python ]; then PATH=/usr/local/share/python:$PATH; fi
 if [ -d /usr/local/share/man ]; then MANPATH=/usr/local/share/man:$MANPATH; fi
 
 # Personal bin
-if [ -d $HOME/bin ]; then PATH=$PATH:$HOME/bin; fi
-if [ -d $HOME/man ]; then MANPATH=$MANPATH:$HOME/man; fi
+if [ -d $HOME/bin ]; then PATH=$HOME/bin:$PATH; fi
+if [ -d $HOME/man ]; then MANPATH=$HOME/man:$MANPATH; fi
+if [ -d $HOME/.rbenv ]; then PATH=$HOME/.rbenv/bin:$PATH; fi
 
 export PATH
 export MANPATH

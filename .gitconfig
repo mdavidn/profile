@@ -13,7 +13,9 @@
 	st = status
 	ci = commit
 	co = checkout
-	b = branch
+	cp = cherry-pick
+	br = branch
+	bl = blame -w -C -C
 	di = diff
 	dc = diff --cached
 	amend = commit --amend
@@ -22,4 +24,4 @@
 	pullff = pull --ff-only
 	fa = fetch --all
 	pom = push origin master
-	graph = log --graph --oneline --all --decorate
+	graph = log --graph --oneline --decorate

@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/nelsm046/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/doc/matterhorn-rack-1.0.0/ri'
+let g:netrw_dirhist_2='/Users/nelsm046/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/doc/matterhorn-rack-1.0.0/ri/Matterhorn'
+let g:netrw_dirhist_3='/Users/nelsm046/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/doc/matterhorn-rack-1.0.0/ri/Matterhorn/Rack'
