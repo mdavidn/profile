@@ -41,7 +41,7 @@ set list listchars=tab:>\ ,trail:~,nbsp:%,extends:>,precedes:<
 set nowrap sidescroll=8
 
 " Display options
-set ruler showmode showcmd number showmatch wildmenu cursorline
+set ruler showmode showcmd number showmatch wildmenu
 set title titlestring=%F
 set background=light
 
@@ -68,12 +68,16 @@ endif
 
 if has("gui_running")
 
+  " Y U ri --help ON HOVER?
+  set noballooneval
+
   " Disable menus and toolbars
   set guioptions=aceg
 
   " Change font
   set guifont=DejaVu\ Sans\ Mono\ 10,Menlo\ Regular:h12
 
+  set cursorline
 endif
 
 " Ctrlp
