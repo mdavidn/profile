@@ -16,6 +16,15 @@ if [ -d $HOME/.rbenv ]; then PATH=$HOME/.rbenv/bin:$PATH; fi
 export PATH
 export MANPATH
 
+# Symlink to ssh-agent (for tmux sessions)
+if [ -z "$TMUX" -a ! -z "$SSH_TTY" -a \
+    ! -z "$SSH_AUTH_SOCK" -a \
+    "$SSH_AUTH_SOCK" != "$HOME/.ssh/agent" ]; then
+  ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/agent"
+  SSH_AUTH_SOCK="$HOME/.ssh/agent"
+  export SSH_AUTH_SOCK
+fi
+
 # Set editor to vi
 if which vim >/dev/null 2>&1; then
   VISUAL=vim; export VISUAL
