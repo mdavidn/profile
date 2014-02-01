@@ -33,9 +33,9 @@ shopt -s checkwinsize
 if [ "$TERM" != dumb ]; then
 
   # ls
-  if [ -x /usr/bin/dircolors ]; then
+  if command -v dircolors >/dev/null; then
     # GNU Coreutils (presumably Linux)
-    eval "`dircolors -b ~/.dircolors`"
+    eval "`dircolors -b "$HOME/.dircolors"`"
     alias ls="ls --color=auto"
   else
     # BSD (and Mac OS)
@@ -48,11 +48,11 @@ if [ "$TERM" != dumb ]; then
   alias egrep="egrep --color=auto"
 
   # Prompt
-  PS1='\[\e[32m\]\u@\h\[\e[0m\]:\[\e[34m\]\w\[\e[0m\] \[\e[31m\]\!\[\e[0m\] \$ '
+  PS1='\[\e[32m\]\u@\h\[\e[0m\]:\[\e[34m\]\w\[\e[0m\]\$ '
 
 else
   # Dumb terminal prompt
-  PS1='\u@\h:\w \! \$ '
+  PS1='\u@\h:\w\$ '
 fi
 
 # If running in an xterm, update window title
@@ -65,10 +65,16 @@ if [[ "$TERM" == xterm* || "$TERM" == rxvt* ]]; then
 fi
 
 # Bash history options
+shopt -s histappend
 HISTSIZE=1000
-HISTCONTROL="ignorespace:ignoredups:erasedups"
+HISTCONTROL="ignorespace:erasedups"
 HISTIGNORE="[bf]g:exit"
 HISTFILESIZE=10000
+
+# Add ~/.rbenv/shims to PATH
+if command -v rbenv >/dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # Evaluate local aliases, useful for machine-specific commands
 if [ -f $HOME/.aliases ]; then

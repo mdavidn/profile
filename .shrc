@@ -12,6 +12,11 @@ PS1="$USER@\h:\w\$ "
 # History options
 HISTSIZE=1000
 
+# Add ~/.rbenv/shims to PATH
+if command -v rbenv >/dev/null; then
+  eval "`rbenv init -`"
+fi
+
 # Evaluate aliases, useful for machine-specific commands
 if [ -f $HOME/.aliases ]; then
   . $HOME/.aliases
