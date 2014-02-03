@@ -24,4 +24,5 @@
 	pullff = pull --ff-only
 	fa = fetch --all
 	pom = push origin master
-	graph = log --graph --oneline --decorate
+	graph = log --graph --oneline --decorate --color
+	gr = log --graph --oneline --decorate --color
