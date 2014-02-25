@@ -1,0 +1,6 @@
+skel/.ssh/id_rsa
+skel/.ssh/id_dsa
+skel/.ssh/id_ecdsa
+skel/.ssh/identity
+skel/.gnupg/secring.gpg
+skel/.gnupg/pubring.gpg~
