@@ -25,6 +25,9 @@ pushpath PATH "$HOME/bin"
 pushpath PATH "$HOME/.rbenv/bin"
 pushpath MANPATH "$HOME/man"
 
+# Chef
+pushpath PATH /opt/chef/bin
+
 export PATH MANPATH
 
 # Symlink to ssh-agent (for tmux sessions)
