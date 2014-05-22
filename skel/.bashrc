@@ -71,11 +71,6 @@ HISTCONTROL="ignorespace:erasedups"
 HISTIGNORE="[bf]g:exit"
 HISTFILESIZE=10000
 
-# Add ~/.rbenv/shims to PATH
-if command -v rbenv >/dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 # Evaluate local aliases, useful for machine-specific commands
 if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases

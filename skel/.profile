@@ -28,6 +28,11 @@ pushpath MANPATH "$HOME/man"
 # Chef
 pushpath PATH /opt/chef/bin
 
+# Add ~/.rbenv/shims to PATH
+if command -v rbenv >/dev/null; then
+  eval "$(rbenv init -)"
+fi
+
 export PATH MANPATH
 
 # Symlink to ssh-agent (for tmux sessions)
