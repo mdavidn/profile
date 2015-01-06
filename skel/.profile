@@ -35,9 +35,17 @@ fi
 
 export PATH MANPATH
 
+# Start ssh-agent if necessary
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval `ssh-agent`
+  cleanup() {
+    kill $SSH_AGENT_PID
+  }
+  trap cleanup EXIT
+fi
+
 # Symlink to ssh-agent (for tmux sessions)
-if [ -z "$TMUX" -a \
-  -n "$SSH_TTY" -a -n "$SSH_AUTH_SOCK" -a \
+if [ -z "$TMUX" -a -n "$SSH_AUTH_SOCK" -a \
   "$SSH_AUTH_SOCK" != "$HOME/.ssh/agent" \
   ]; then
   ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/agent"
